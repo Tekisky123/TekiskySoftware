@@ -61,8 +61,16 @@ const Header = () => {
                   alt="logo"
                   width={110}
                   height={10}
-                  // className="w-full dark:hidden"
+                  className="w-full dark:hidden"
                 />
+                <Image
+                  src="/images/logo/Blue_Modern_Software_Company_Logo__1_-removebg-preview.png"
+                  alt="logo"
+                  className="hidden w-full dark:block"
+                  width={110}
+                  height={10}
+                />
+               
                 
                 {/* <h1>Tekisky Software</h1> */}
               </Link>
@@ -154,18 +162,7 @@ const Header = () => {
                 </nav>
               </div>
               <div className="flex items-center justify-end pr-16 lg:pr-0">
-                <Link
-                  href="/signin"
-                  className="hidden px-7 py-3 text-base font-medium text-dark hover:opacity-70 dark:text-white md:block"
-                >
-                  Sign In
-                </Link>
-                <Link
-                  href="/signup"
-                  className="ease-in-up hidden rounded-sm bg-primary px-8 py-3 text-base font-medium text-white shadow-btn transition duration-300 hover:bg-opacity-90 hover:shadow-btn-hover md:block md:px-9 lg:px-6 xl:px-9"
-                >
-                  Sign Up
-                </Link>
+             
                 <div>
                   <ThemeToggler />
                 </div>
