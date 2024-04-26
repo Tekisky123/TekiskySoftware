@@ -8,8 +8,8 @@ const testimonialData: Testimonial[] = [
     name: "Musharof Chy",
     designation: "Founder @TailGrids",
     content:
-      "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
-    image: "/images/testimonials/auth-01.png",
+      " Their team's expertise and dedication to excellence helped us achieve our goals faster than we ever thought possible From the initial consultation to the final implementation",
+    image: "",
     star: 5,
   },
   {
@@ -17,7 +17,7 @@ const testimonialData: Testimonial[] = [
     name: "Devid Weilium",
     designation: "Founder @UIdeck",
     content:
-      "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
+      "Tekisky Software truly understands our vision and delivers solutions that exceed our expectations every time. Their collaborative approach and commitment to quality make them a valuable partner for our organization",
     image: "/images/testimonials/auth-02.png",
     star: 5,
   },
@@ -26,7 +26,7 @@ const testimonialData: Testimonial[] = [
     name: "Lethium Frenci",
     designation: "Founder @Lineicons",
     content:
-      "Our members are so impressed. It's intuitive. It's clean. It's distraction free. If you're building a community.",
+      "I can't recommend Tekisky Software highly enough. Their agility and responsiveness have been crucial in helping us navigate the ever-changing digital landscape. Partnering with them has been a game-changer",
     image: "/images/testimonials/auth-03.png",
     star: 5,
   },
@@ -38,7 +38,7 @@ const Testimonials = () => {
       <div className="container">
         <SectionTitle
           title="What Our Users Says"
-          paragraph="There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some form."
+          paragraph="we pride ourselves on delivering exceptional experiences to our clients. Here's what some of them have to say about working with us:"
           center
         />
 

@@ -138,7 +138,6 @@ const Footer = () => {
                       Services
                     </Link>
                   </li>
-                 
                 </ul>
               </div>
             </div>
@@ -177,13 +176,12 @@ const Footer = () => {
               </div>
             </div> */}
 
-            <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-3/12">
+            <div className="w-full px-4 md:w-1/2 lg:w-4/12 xl:w-2/12">
               <div className="mb-12 lg:mb-16">
                 <h2 className="mb-10 text-xl font-bold text-black dark:text-white">
                   Support & Help
                 </h2>
                 <ul>
-                 
                   <li>
                     <Link
                       href="/contact-us"
@@ -203,89 +201,25 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12620.934558199717!2d144.7402721296486!3d-37.73766266605428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad6f4dfee4cd913%3A0x7519fcd549b136e9!2s22%20Jolimont%20St%2C%20Caroline%20Springs%20VIC%203023%2C%20Australia!5e0!3m2!1sen!2sin!4v1713851480205!5m2!1sen!2sin"
+              width="100%"
+              height="350"
+              className="google-map-footer "
+              style={{ border: "0" }}
+              allowFullScreen={true}
+              loading="lazy"
+            ></iframe>
           </div>
 
           <div className="h-px w-full bg-gradient-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]"></div>
           <div className="py-8">
             <p className="text-center text-base text-body-color dark:text-white">
-             
+              22 Jolimont Street, Caroline Springs, Victoria 3023, Australia
             </p>
           </div>
         </div>
-        <div className="absolute right-0 top-14 z-[-1]">
-          <svg
-            width="55"
-            height="99"
-            viewBox="0 0 55 99"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle opacity="0.8" cx="49.5" cy="49.5" r="49.5" fill="#959CB1" />
-            <mask
-              id="mask0_94:899"
-              style={{ maskType: "alpha" }}
-              maskUnits="userSpaceOnUse"
-              x="0"
-              y="0"
-              width="99"
-              height="99"
-            >
-              <circle
-                opacity="0.8"
-                cx="49.5"
-                cy="49.5"
-                r="49.5"
-                fill="#4A6CF7"
-              />
-            </mask>
-            <g mask="url(#mask0_94:899)">
-              <circle
-                opacity="0.8"
-                cx="49.5"
-                cy="49.5"
-                r="49.5"
-                fill="url(#paint0_radial_94:899)"
-              />
-              <g opacity="0.8" filter="url(#filter0_f_94:899)">
-                <circle cx="53.8676" cy="26.2061" r="20.3824" fill="white" />
-              </g>
-            </g>
-            <defs>
-              <filter
-                id="filter0_f_94:899"
-                x="12.4852"
-                y="-15.1763"
-                width="82.7646"
-                height="82.7646"
-                filterUnits="userSpaceOnUse"
-                colorInterpolationFilters="sRGB"
-              >
-                <feFlood floodOpacity="0" result="BackgroundImageFix" />
-                <feBlend
-                  mode="normal"
-                  in="SourceGraphic"
-                  in2="BackgroundImageFix"
-                  result="shape"
-                />
-                <feGaussianBlur
-                  stdDeviation="10.5"
-                  result="effect1_foregroundBlur_94:899"
-                />
-              </filter>
-              <radialGradient
-                id="paint0_radial_94:899"
-                cx="0"
-                cy="0"
-                r="1"
-                gradientUnits="userSpaceOnUse"
-                gradientTransform="translate(49.5 49.5) rotate(90) scale(53.1397)"
-              >
-                <stop stopOpacity="0.47" />
-                <stop offset="1" stopOpacity="0" />
-              </radialGradient>
-            </defs>
-          </svg>
-        </div>
+
         <div className="absolute bottom-24 left-0 z-[-1]">
           <svg
             width="79"

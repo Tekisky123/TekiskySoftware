@@ -55,6 +55,7 @@
 }
 
 
+
 /* Styles for mobile devices (up to 640px) */
 @media screen and (max-width: 640px) {
   .hero-section-img {
@@ -63,6 +64,11 @@
   .google-map{
     width: 355px;
   }
+  .google-map-footer{
+    width: 100%;
+    padding: 10px;
+  }
+  
 }
 
 /* Styles for tablets (641px to 768px) */
