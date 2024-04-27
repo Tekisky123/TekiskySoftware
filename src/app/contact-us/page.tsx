@@ -38,6 +38,7 @@ const BlogSidebarPage = () => {
                         height="450"
                         className="google-map"
                         style={{ border: "0" }}
+                        dir="off"
                         allowFullScreen={true}
                         loading="lazy"
                       ></iframe>
@@ -85,7 +86,7 @@ const BlogSidebarPage = () => {
                   </li>
                   <li>
                     <RelatedPost
-                      title="Facebook"
+                      title="Linkedin"
                       image="/images/blog/free-linkedin-logo-vector-r3cq0.webp"
                       slug="#"
                       

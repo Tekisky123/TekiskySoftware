@@ -1,3 +1,7 @@
+.gm-style .place-card-large{
+  display: none !important !important;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 @tailwind base;
@@ -32,49 +36,48 @@
   }
 }
 
-.content-image{
+
+.content-image {
   object-fit: cover;
   border-radius: 8px;
 }
 
-.hero-section{
+.hero-section {
   margin-top: -80px;
 }
 
 .hero-section-img {
-  
 }
-.service-img{
+.service-img {
   height: 200px !important;
   width: 400px !important;
   border-radius: 10px;
-  
 }
-.social-logo{
+.social-logo {
   object-fit: cover;
 }
-
-
+.gm-style-iw-c {
+  display: none !important;
+}
 
 /* Styles for mobile devices (up to 640px) */
 @media screen and (max-width: 640px) {
   .hero-section-img {
     /* Styles for screens up to 640px wide (mobile devices) */
   }
-  .google-map{
+  .google-map {
     width: 355px;
   }
-  .google-map-footer{
+  .google-map-footer {
     width: 100%;
     padding: 10px;
   }
-  
 }
 
 /* Styles for tablets (641px to 768px) */
 @media screen and (min-width: 641px) and (max-width: 768px) {
   .hero-section-img {
-   margin-top: 150px;
+    margin-top: 150px;
   }
 }
 
@@ -88,7 +91,5 @@
 /* Styles for larger desktops (1025px to 1280px) */
 @media screen and (min-width: 1025px) and (max-width: 1280px) {
   .hero-section-img {
-    
   }
 }
-

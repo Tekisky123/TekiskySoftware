@@ -1,76 +1,101 @@
 "use client";
-import { useState } from "react";
+import {  useState } from "react";
+import axios from "axios";
+import Swal from "sweetalert2";
+import { useRouter } from "next/navigation";
 
 const Contact = () => {
-const [formData, setFormData] = useState({
-  name: "",
-  email: "",
-  message: "",
-  errors: {
+
+  const router = useRouter()
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
-  },
-});
-const [submitting, setSubmitting] = useState(false);
-
-const handleChange = (e) => {
-  const { name, value } = e.target;
-  setFormData({
-    ...formData,
-    [name]: value,
     errors: {
-      ...formData.errors,
-      [name]: value.trim() ? "" : `${name} is required`,
+      name: "",
+      email: "",
+      message: "",
     },
   });
-};
+  const [submitting, setSubmitting] = useState(false);
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  if (!validateForm()) {
-    return;
-  }
-  setSubmitting(true);
-  // Send emailData to backend to handle email sending
-  try {
-    const response = await fetch("/send-email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+      errors: {
+        ...formData.errors,
+        [name]: value.trim() ? "" : `${name} is required`,
       },
-      body: JSON.stringify(formData),
     });
-    if (response.ok) {
-      // Email sent successfully, do something
-      console.log("Email sent successfully");
-    } else {
-      // Email sending failed, handle error
-      console.error("Email sending failed");
-    }
-  } catch (error) {
-    console.error("Error sending email:", error);
-  }
-  setSubmitting(false);
-};
-
-const validateForm = () => {
-  const { name, email, message } = formData;
-  let valid = true;
-  const errors = {
-    name: name.trim() ? "" : "Name is required",
-    email: email.trim() ? "" : "email address is required",
-    message: message.trim() ? "" : "Message is required",
   };
 
-  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!validateForm()) {
+      return;
+    }
+    setSubmitting(true);
+    try {
+      const response = await axios.post(
+        "https://tekiskysoftware-backend.onrender.com/api/submitForm",
+        formData
+      );
+      if (response.status === 200) {
+        Swal.fire({
+          icon: "success",
+          title: "Success!",
+          text: "Email sent successfully",
+        }).then(() => {
+          setFormData({
+            name: "",
+            email: "",
+            message: "",
+            errors: {
+              name: "",
+              email: "",
+              message: "",
+            },
+          });
+          router.push("/");
+        });
+      } else {
+        Swal.fire({
+          icon: "error",
+          title: "Error!",
+          text: "Failed to send email",
+        });
+      }
+    } catch (error) {
+      Swal.fire({
+        icon: "error",
+        title: "Error!",
+        text: "Error sending email",
+      });
+    }
+    setSubmitting(false);
+  };
 
-  setFormData({ ...formData, errors });
-  return Object.values(errors).every((error) => error === "");
-};
+  const validateForm = () => {
+    const { name, email, message } = formData;
+    let valid = true;
+    const errors = {
+      name: name.trim() ? "" : "Name is required",
+      email: email.trim() ? "" : "Email address is required",
+      message: message.trim() ? "" : "Message is required",
+    };
+
+    setFormData({ ...formData, errors });
+    return Object.values(errors).every((error) => error === "");
+  };
 
   return (
-    <section id="contact" className="overflow-hidden py-16 md:py-20 lg:py-28">
+    <section
+      id="contact"
+      className="overflow-hidden py-16 md:py-20 lg:py-28 relative"
+    >
+     
       <div className="container">
         <div className="w-full px-4 lg:w-7/12 xl:w-8/12">
           <div
@@ -83,6 +108,7 @@ const validateForm = () => {
             <p className="mb-12 text-base font-medium text-body-color">
               Our support team will get back to you ASAP via email.
             </p>
+           
             <form onSubmit={handleSubmit}>
               <div className="-mx-4 flex flex-wrap">
                 <div className="w-full px-4 md:w-1/2">
@@ -105,23 +131,25 @@ const validateForm = () => {
                       }`}
                     />
                     {formData.errors.name && (
-                      <p className="mt-1 text-sm text-red-500">{formData.errors.name}</p>
+                      <p className="mt-1 text-sm text-red-500">
+                        {formData.errors.name}
+                      </p>
                     )}
                   </div>
                 </div>
-               
+
                 <div className="w-full px-4">
                   <div className="mb-8">
                     <label
-                      htmlFor="mobileNumber"
+                      htmlFor="email"
                       className="mb-3 block text-sm font-medium text-dark dark:text-white"
                     >
-                      Your Email 
+                      Your Email
                     </label>
                     <input
                       type="text"
-                      id="mobileNumber"
-                      name="mobileNumber"
+                      id="email"
+                      name="email"
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="Enter your email address"
