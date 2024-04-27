@@ -3,6 +3,7 @@ import {  useState } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useRouter } from "next/navigation";
+import Loader from "../Common/Loader";
 
 const Contact = () => {
 
@@ -18,6 +19,7 @@ const Contact = () => {
     },
   });
   const [submitting, setSubmitting] = useState(false);
+  const [showLoader, setShowLoader] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -37,6 +39,7 @@ const Contact = () => {
       return;
     }
     setSubmitting(true);
+    setShowLoader(true);
     try {
       const response = await axios.post(
         "https://tekiskysoftware-backend.onrender.com/api/submitForm",
@@ -74,6 +77,7 @@ const Contact = () => {
         text: "Error sending email",
       });
     }
+    setShowLoader(false); 
     setSubmitting(false);
   };
 
@@ -95,6 +99,7 @@ const Contact = () => {
       id="contact"
       className="overflow-hidden py-16 md:py-20 lg:py-28 relative"
     >
+        {showLoader && <Loader />}
      
       <div className="container">
         <div className="w-full px-4 lg:w-7/12 xl:w-8/12">

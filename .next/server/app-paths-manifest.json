@@ -3,6 +3,5 @@
   "/contact-us/page": "app/contact-us/page.js",
   "/contact/page": "app/contact/page.js",
   "/about/page": "app/about/page.js",
-  "/services/page": "app/services/page.js",
-  "/technology/page": "app/technology/page.js"
+  "/services/page": "app/services/page.js"
 }
