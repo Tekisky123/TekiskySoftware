@@ -1,18 +1,23 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import ThemeToggler from "./ThemeToggler";
 import menuData from "./menuData";
 
 const Header = () => {
+  const router = useRouter();
+
   // Navbar toggle
   const [navbarOpen, setNavbarOpen] = useState(false);
   const navbarToggleHandler = () => {
     setNavbarOpen(!navbarOpen);
   };
 
+  const handleMenuItemClick = () => {
+    setNavbarOpen(false);
+  };
   // Sticky Navbar
   const [sticky, setSticky] = useState(false);
   const handleStickyNavbar = () => {
@@ -70,8 +75,7 @@ const Header = () => {
                   width={110}
                   height={10}
                 />
-               
-                
+
                 {/* <h1>Tekisky Software</h1> */}
               </Link>
             </div>
@@ -113,11 +117,8 @@ const Header = () => {
                         {menuItem.path ? (
                           <Link
                             href={menuItem.path}
-                            className={`flex py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${
-                              usePathName === menuItem.path
-                                ? "text-primary dark:text-white underline"
-                                : "text-dark hover:text-primary dark:text-white/70 dark:hover:text-white"
-                            }`}
+                            onClick={handleMenuItemClick}
+                            className={`flex py-2 text-base lg:mr-0 lg:inline-flex lg:px-0 lg:py-6 ${usePathName === menuItem.path ? "text-primary underline dark:text-white" : "text-dark hover:text-primary dark:text-white/70 dark:hover:text-white"}`}
                           >
                             {menuItem.title}
                           </Link>
@@ -162,7 +163,6 @@ const Header = () => {
                 </nav>
               </div>
               <div className="flex items-center justify-end pr-16 lg:pr-0">
-             
                 <div>
                   <ThemeToggler />
                 </div>
