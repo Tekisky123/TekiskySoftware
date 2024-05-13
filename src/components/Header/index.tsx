@@ -62,19 +62,19 @@ const Header = () => {
                 } `}
               >
                 <Image
-                  src="/images/logo/Blue_Modern_Software_Company_Logo-removebg-preview.png"
+                  src="/images/logo/02-Photoroom.png-Photoroom.png"
                   alt="logo"
-                  width={110}
-                  height={10}
-                  className="w-full dark:hidden"
+                  width={150}
+                  height={20}
+                  className="w-full dark:hidden main-logo"
                 />
-                <Image
-                  src="/images/logo/Blue_Modern_Software_Company_Logo__1_-removebg-preview.png"
+                {/* <Image
+                  src="/images/logo/02-Photoroom.png-Photoroom.png"
                   alt="logo"
                   className="hidden w-full dark:block"
                   width={110}
                   height={10}
-                />
+                /> */}
 
                 {/* <h1>Tekisky Software</h1> */}
               </Link>
@@ -163,9 +163,9 @@ const Header = () => {
                 </nav>
               </div>
               <div className="flex items-center justify-end pr-16 lg:pr-0">
-                <div>
+                {/* <div>
                   <ThemeToggler />
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

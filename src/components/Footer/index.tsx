@@ -12,19 +12,19 @@ const Footer = () => {
               <div className="mb-12 max-w-[360px] ">
                 <Link href="/" className="mb-8 inline-block">
                   <Image
-                    src="/images/logo/Blue_Modern_Software_Company_Logo-removebg-preview.png"
+                    src="/images/logo/02-Photoroom.png-Photoroom.png"
                     alt="logo"
                     className="w-full dark:hidden "
                     width={140}
                     height={30}
                   />
-                  <Image
+                  {/* <Image
                     src="/images/logo/Blue_Modern_Software_Company_Logo__1_-removebg-preview.png"
                     alt="logo"
                     className="hidden w-full dark:block"
                     width={140}
                     height={30}
-                  />
+                  /> */}
                 </Link>
                 <p className="mb-9 text-base leading-relaxed text-body-color dark:text-body-color-dark">
                   Your Technology Partner

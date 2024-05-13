@@ -88,6 +88,12 @@
     width: 100%;
     padding: 10px;
   }
+  .main-logo{
+
+  }
+}
+.header-logo{
+  width: 180px;
 }
 
 /* Styles for tablets (641px to 768px) */
