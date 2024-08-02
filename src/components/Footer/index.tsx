@@ -166,15 +166,7 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12620.934558199717!2d144.7402721296486!3d-37.73766266605428!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad6f4dfee4cd913%3A0x7519fcd549b136e9!2s22%20%20St%2C%20%20Springs%20VIC%203023%2C%20Australia!5e0!3m2!1sen!2sin!4v1713851480205!5m2!1sen!2sin"
-              width="100%"
-              height="350"
-              className="google-map-footer "
-              style={{ border: "0" }}
-              allowFullScreen={false}
-              loading="lazy"
-            ></iframe>
+          
           </div>
 
           <div className="h-px w-full bg-gradient-to-r from-transparent via-[#D2D8E183] to-transparent dark:via-[#959CB183]"></div>
